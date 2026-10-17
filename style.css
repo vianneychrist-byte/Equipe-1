@@ -1,0 +1,77 @@
+:root {
+    --rose-pale: #FFF0F5;
+    --rose-clair: #F8BBD0;
+    --rose-moyen: #F06292;
+    --rose-vif: #D81B7A;
+    --rose-fonce: #A3125E;
+    --texte: #4A1A2C;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--rose-pale);
+    color: var(--texte);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--rose-fonce);
+    color: #FFFFFF;
+    padding: 15px 20px;
+}
+
+nav {
+    background-color: var(--rose-vif);
+    padding: 10px 20px;
+}
+
+nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--rose-clair);
+    text-decoration: underline;
+}
+
+h1 {
+    color: var(--rose-fonce);
+}
+
+h2 {
+    color: var(--rose-vif);
+}
+
+h3, p {
+    color: var(--texte);
+}
+
+section:nth-of-type(even) {
+    background-color: var(--rose-clair);
+    padding: 20px;
+}
+
+a.bouton, .bouton {
+    display: inline-block;
+    background-color: var(--rose-vif);
+    color: #FFFFFF;
+    padding: 12px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.bouton:hover {
+    background-color: var(--rose-fonce);
+}
+
+footer {
+    background-color: var(--rose-moyen);
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px;
+}
