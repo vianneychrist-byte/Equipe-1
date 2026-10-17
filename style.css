@@ -1,77 +1,373 @@
 :root {
-    --rose-pale: #FFF0F5;
-    --rose-clair: #F8BBD0;
-    --rose-moyen: #F06292;
-    --rose-vif: #D81B7A;
-    --rose-fonce: #A3125E;
-    --texte: #4A1A2C;
+  --rose-poudre: #F8D7E5;
+  --rose: #D63384;
+  --rose-fonce: #9D174D;
+  --blanc-casse: #FFF9FC;
+  --texte: #333333;
+  --vert-doux: #789B85;
+
+  --police-titres: "Poppins", "Segoe UI", Arial, sans-serif;
+  --police-texte: "Open Sans", "Segoe UI", Arial, sans-serif;
+
+  --rayon: 20px;
+  --ombre: 0 6px 20px rgba(157, 23, 77, 0.12);
+  --ombre-forte: 0 12px 28px rgba(157, 23, 77, 0.2);
+}
+
+/* ---------- 2. BASE ---------- */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;   /* défilement doux vers les ancres */
+  scroll-padding-top: 90px;  /* évite que l'en-tête cache le titre */
 }
 
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: var(--rose-pale);
-    color: var(--texte);
-    line-height: 1.6;
+  margin: 0;
+  font-family: var(--police-texte);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--texte);
+  background-color: var(--blanc-casse);
 }
 
-header {
-    background-color: var(--rose-fonce);
-    color: #FFFFFF;
-    padding: 15px 20px;
+h1, h2, h3 {
+  font-family: var(--police-titres);
+  color: var(--rose-fonce);
+  line-height: 1.25;
+  margin: 0 0 1rem;
 }
 
-nav {
-    background-color: var(--rose-vif);
-    padding: 10px 20px;
+h1 { font-size: clamp(2rem, 5vw, 3.1rem); }
+h2 { font-size: clamp(1.6rem, 3.5vw, 2.3rem); margin-bottom: 2rem; }
+h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+
+p { margin: 0 0 1rem; }
+
+img { max-width: 100%; }
+
+.conteneur {
+  width: min(1100px, 100% - 2rem);
+  margin-inline: auto;
 }
 
-nav a {
-    color: #FFFFFF;
-    text-decoration: none;
-    margin-right: 20px;
-    font-weight: bold;
+.texte-centre { text-align: center; }
+
+.texte-large {
+  max-width: 720px;
+  margin-inline: auto;
+  margin-bottom: 1.2rem;
 }
 
-nav a:hover {
-    color: var(--rose-clair);
-    text-decoration: underline;
-}
-
-h1 {
-    color: var(--rose-fonce);
-}
-
-h2 {
-    color: var(--rose-vif);
-}
-
-h3, p {
-    color: var(--texte);
-}
-
-section:nth-of-type(even) {
-    background-color: var(--rose-clair);
-    padding: 20px;
-}
-
-a.bouton, .bouton {
-    display: inline-block;
-    background-color: var(--rose-vif);
-    color: #FFFFFF;
-    padding: 12px 24px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
+/* ---------- Boutons ---------- */
+.bouton {
+  display: inline-block;
+  padding: 0.85rem 1.8rem;
+  border-radius: 999px;
+  background-color: var(--rose);
+  color: #fff;
+  font-family: var(--police-titres);
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: var(--ombre);
+  transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .bouton:hover {
-    background-color: var(--rose-fonce);
+  background-color: var(--rose-fonce);
+  transform: translateY(-2px);
+  box-shadow: var(--ombre-forte);
 }
 
-footer {
-    background-color: var(--rose-moyen);
-    color: #FFFFFF;
-    text-align: center;
-    padding: 20px;
+/* Bouton blanc, utilisé sur fond rose foncé */
+.bouton-clair {
+  background-color: #fff;
+  color: var(--rose-fonce);
+}
+
+.bouton-clair:hover {
+  background-color: var(--rose-poudre);
+  color: var(--rose-fonce);
+}
+
+/* ---------- 3. EN-TÊTE ---------- */
+.entete {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: rgba(255, 249, 252, 0.96);
+  border-bottom: 1px solid var(--rose-poudre);
+  box-shadow: 0 2px 10px rgba(157, 23, 77, 0.06);
+}
+
+.entete-contenu {
+  display: flex;
+  flex-wrap: wrap;          /* le menu passe sous le logo si l'espace manque */
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding-block: 0.7rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  font-family: var(--police-titres);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--rose-fonce);
+}
+
+.logo-ruban { font-size: 1.6rem; }
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu a {
+  display: block;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--texte);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.menu a:hover {
+  background-color: var(--rose-poudre);
+  color: var(--rose-fonce);
+}
+
+/* ---------- 4. ACCUEIL ---------- */
+.accueil {
+  padding-block: 4rem;
+  background: linear-gradient(135deg, var(--blanc-casse) 0%, var(--rose-poudre) 100%);
+}
+
+.accueil-contenu {
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /* 2 colonnes sur ordinateur */
+  align-items: center;
+  gap: 3rem;
+}
+
+.sous-titre {
+  font-family: var(--police-titres);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--rose);
+}
+
+.accueil-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 320px;
+  border: 3px dashed var(--rose);
+  border-radius: var(--rayon);
+  background-color: rgba(255, 255, 255, 0.6);
+  color: var(--rose-fonce);
+  font-weight: 600;
+  text-align: center;
+  padding: 1rem;
+}
+
+.accueil-image-ruban { font-size: 4rem; }
+
+/* ---------- 5. SECTIONS ---------- */
+.section {
+  padding-block: 4.5rem;
+}
+
+.section-rose {
+  background-color: var(--rose-poudre);
+}
+
+/* ---------- 6. OBJECTIFS ---------- */
+.grille-objectifs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.carte-objectif {
+  padding: 2rem 1.5rem;
+  background-color: #fff;
+  border-radius: var(--rayon);
+  box-shadow: var(--ombre);
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.carte-objectif:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--ombre-forte);
+}
+
+.icone {
+  display: grid;
+  place-items: center;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background-color: var(--rose-poudre);
+  font-size: 2rem;
+}
+
+.icone-vert {
+  background-color: rgba(120, 155, 133, 0.25);  /* vert doux */
+}
+
+/* ---------- 7. ÉQUIPE ---------- */
+.grille-equipe {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);   /* 3 colonnes sur grand écran */
+  gap: 1.75rem;
+}
+
+.carte-membre {
+  padding: 1.75rem 1.5rem;
+  background-color: #fff;
+  border-top: 5px solid var(--rose);
+  border-radius: var(--rayon);
+  box-shadow: var(--ombre);
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.carte-membre:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--ombre-forte);
+}
+
+/* Cadre rond de la photo : même taille pour tous les membres */
+.photo-membre {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--rose-poudre);
+  border: 4px solid var(--rose-poudre);
+  box-shadow: 0 0 0 3px var(--rose);
+}
+
+/* Initiale affichée tant qu'aucune photo n'est disponible */
+.photo-initiale {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--police-titres);
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: var(--rose-fonce);
+}
+
+/* La photo recouvre l'initiale dès qu'elle existe */
+.photo-membre img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;           /* recadrage harmonieux */
+  color: transparent;          /* masque le texte alternatif si la photo manque */
+  font-size: 0;
+}
+
+.role {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  padding: 0.2rem 0.9rem;
+  border-radius: 999px;
+  background-color: rgba(120, 155, 133, 0.22);
+  color: #3f5f4a;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ---------- 8. SENSIBILISATION ---------- */
+.sensibilisation {
+  padding-block: 4.5rem;
+  background: linear-gradient(135deg, var(--rose-fonce), var(--rose));
+  color: #fff;
+}
+
+.sensibilisation h2 { color: #fff; }
+
+/* ---------- 9. PIED DE PAGE ---------- */
+.pied-de-page {
+  padding-block: 2.5rem;
+  background-color: var(--rose-poudre);
+  color: var(--texte);
+}
+
+.pied-de-page p { margin-bottom: 0.4rem; }
+
+.pied-nom {
+  font-family: var(--police-titres);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--rose-fonce);
+}
+
+.pied-annee { font-size: 0.95rem; }
+
+/* ---------- 10. TABLETTE (jusqu'à 900 px) ---------- */
+@media (max-width: 900px) {
+  .grille-equipe { grid-template-columns: repeat(2, 1fr); }   /* 2 colonnes */
+  .grille-objectifs { grid-template-columns: 1fr; max-width: 520px; margin-inline: auto; }
+  .accueil-contenu { grid-template-columns: 1fr; gap: 2rem; }  /* 1 colonne */
+}
+
+/* ---------- 11. TÉLÉPHONE (jusqu'à 600 px) ---------- */
+@media (max-width: 600px) {
+  .entete-contenu { justify-content: center; }
+  .menu { justify-content: center; }
+  .menu a { padding: 0.4rem 0.75rem; font-size: 0.95rem; }
+
+  .accueil { padding-block: 2.5rem; }
+  .accueil-image { min-height: 220px; }
+  .section, .sensibilisation { padding-block: 3rem; }
+
+  .grille-equipe { grid-template-columns: 1fr; }   /* 1 colonne */
+  .bouton { width: 100%; text-align: center; }
+}
+
+/* ---------- 12. ACCESSIBILITÉ ---------- */
+/* Contour bien visible pour la navigation au clavier (touche Tab) */
+a:focus-visible {
+  outline: 3px solid var(--rose-fonce);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.sensibilisation a:focus-visible {
+  outline-color: #fff;
+}
+
+/* Supprime les animations pour les personnes qui le demandent */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+  .carte-objectif:hover,
+  .carte-membre:hover,
+  .bouton:hover { transform: none; }
 }
