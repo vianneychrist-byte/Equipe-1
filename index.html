@@ -1,69 +1,236 @@
-<DOTYPE html>
-  <htlm lang="fr"> 
-    <head>
-       <meta charset="UTF-8">
-       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="description" content="cancer de sein ">
-      
-      <title>groupe 1</title> <link rel="stylesheet" href="style.css"> </head>
-    <body> <header class="navbar">
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Découvrez notre équipe – Les Rubans Roses</title>
+  <meta name="description" content="Les Rubans Roses : 7 apprenants engagés pour informer sur le cancer du sein et encourager le dépistage précoce.">
 
-    <a href="#accueil" class="logo"> SECA VIANNEY
-          <span>DM</span>
-    </a>
-      <h1> TOUS ENSEMBLE CONTRE LE CANCER ET SAUVONS DES VIES </h1>
+  <!-- Polices Google Fonts : Poppins (titres) et Open Sans (textes) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
 
-    <nav>
-        <a href="#acceuil"> acceuil</a>
-        <a href="#prevention">prevention</a>
-        <a href="#signe d'alerte">signe d'alerte </a>
-        <a href="#contacts">contacts</a>
-    </nav>
-<h1
-</header> 
-<main> 
-        <section class="hero" id="accueil"> 
+  <!-- Liaison avec la feuille de style (style.css doit être dans le même dossier) -->
+  <link rel="stylesheet" href="style.css">
+</head>
 
-        <div class="hero-content">
-            <p class="small-label">
-            
-            </p>
+<body>
 
-            <h1>
-                Bienvenue sur notre site. nous allonsvous INFORMER, SENSIBILISER ET ENCOURAGER AU
-                <em>DEPISTAGE</em>  .
-            </h1>
+  <!-- ========== EN-TÊTE ET NAVIGATION ========== -->
+  <header class="entete">
+    <div class="conteneur entete-contenu">
+      <a class="logo" href="#accueil">
+        <span class="logo-ruban" aria-hidden="true">🎗️</span>
+        <span class="logo-nom">Les Rubans Roses</span>
+      </a>
 
-            <p class="hero-description">
-                Nous sommes des benevoles pour la lutte contre le cancer
-            </p>
+      <nav aria-label="Navigation principale">
+        <ul class="menu">
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#apropos">À propos</a></li>
+          <li><a href="#objectifs">Nos objectifs</a></li>
+          <li><a href="#equipe">Notre équipe</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-            <a href="#travaux" class="button">
-                Découvrir les moyens de prevention
-                <span>↓</span>
-            </a>
+  <main>
 
+    <!-- ========== SECTION D'ACCUEIL ========== -->
+    <section class="accueil" id="accueil">
+      <div class="conteneur accueil-contenu">
+        <div class="accueil-texte">
+          <h1>Ensemble, luttons contre le cancer du sein</h1>
+          <p class="sous-titre">Informer, sensibiliser et encourager le dépistage précoce</p>
+          <p>
+            Nous sommes un groupe de 7 apprenants réunis autour d'un même projet :
+            contribuer, à notre échelle, à la sensibilisation au cancer du sein.
+            Par cette première page web, nous voulons partager des messages
+            d'information, de solidarité et d'espoir.
+          </p>
+          <a class="bouton" href="#equipe">Découvrir notre équipe</a>
         </div>
 
-
-        <div class="hero-image">
-
-            <img
-                src="images/oeuvre-1.jpg"
-                alt=3NOS ACTIVITES"
-            >
-
-            <div class="hero-caption">
-                <span>01</span>
-                <span>NOS SPONSORS</span>
-            </div>
-
-        </div>
-
+        <!-- Espace réservé pour une image de sensibilisation.
+             Pour l'ajouter : remplacez tout le <div class="accueil-image"> par
+             <img class="accueil-image" src="images/sensibilisation.jpg" alt="Description de l'image"> -->
+       <img class="image-sensibilisation" src="image/sensibilisation.jpg" alt="Ruban rose, symbole de la lutte contre le cancer du sein">
+      </div>
     </section>
-    
-   </main>
+
+    <!-- ========== SECTION À PROPOS ========== -->
+    <section class="section" id="apropos">
+      <div class="conteneur texte-centre">
+        <h2>Qui sommes-nous ?</h2>
+        <p class="texte-large">
+          Nous sommes une équipe de 7 apprenants réunis autour d'un projet de
+          sensibilisation à la lutte contre le cancer du sein.
+        </p>
+        <p class="texte-large">
+          Notre initiative vise à informer le public, à encourager les échanges
+          autour de la prévention et à rappeler l'importance de consulter un
+          professionnel de santé pour toute question ou anomalie préoccupante.
+          Ce site ne remplace en aucun cas un avis médical.
+        </p>
+        <p class="texte-large">
+          Notre souhait : que chacune et chacun se sente écouté, informé et soutenu.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========== SECTION NOS OBJECTIFS ========== -->
+    <section class="section section-rose" id="objectifs">
+      <div class="conteneur">
+        <h2 class="texte-centre">Nos objectifs</h2>
+
+        <div class="grille-objectifs">
+          <article class="carte-objectif">
+            <div class="icone" aria-hidden="true">💡</div>
+            <h3>Sensibiliser</h3>
+            <p>Informer le public sur le cancer du sein et lutter contre les idées reçues.</p>
+          </article>
+
+          <article class="carte-objectif">
+            <div class="icone" aria-hidden="true">🩺</div>
+            <h3>Encourager le dépistage</h3>
+            <p>Rappeler l'importance du dépistage adapté à chaque personne et des conseils d'un professionnel de santé.</p>
+          </article>
+
+          <article class="carte-objectif">
+            <div class="icone icone-vert" aria-hidden="true">🤝</div>
+            <h3>Promouvoir la solidarité</h3>
+            <p>Encourager le soutien, l'écoute et l'accompagnement des personnes touchées par la maladie.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION NOTRE ÉQUIPE ========== -->
+    <section class="section" id="equipe">
+      <div class="conteneur">
+        <h2 class="texte-centre">Découvrez les membres de notre équipe</h2>
+
+        <div class="grille-equipe">
+
+          <!--
+            COMMENT AJOUTER UNE VRAIE PHOTO ?
+            1. Placez la photo dans le dossier « images » (ex. : images/membre1.jpg).
+            2. Vérifiez que le nom du fichier est identique à celui de la balise <img>.
+            3. Tant que la photo n'existe pas, l'initiale rose reste visible derrière.
+            4. Remplacez la lettre dans <span class="photo-initiale"> par l'initiale du membre.
+            5. Une fois la photo ajoutée, écrivez l'attribut alt (ex. : alt="Photo de Awa Koné"). Laissé vide (alt=""), il évite d'afficher le nom en double tant que la photo manque.
+            Les 7 cartes fonctionnent exactement de la même façon.
+          -->
+
+          <!-- Membre 1 -->
+          <article class="carte-membre">
+            <div class="photo-membre">
+              <span class="photo-initiale" aria-hidden="true">1</span>
+              <img src="images/membre1.jpg" alt="" width="300" height="300">
+            </div>
+            <h3>Mel Decoster</h3>
+            <p class="role">Coordination</p>
+            <p>Organise le travail du groupe et veille à ce que chacun puisse s'exprimer.</p>
+          </article>
+
+          <!-- Membre 2 -->
+          <article class="carte-membre">
+            <div class="photo-membre">
+              <span class="photo-initiale" aria-hidden="true">2</span>
+              <img src="images/membre2.jpg" alt="" width="300" height="300">
+            </div>
+            <h3>Kouame Damo jacob</h3>
+            <p class="role">Recherche</p>
+            <p>Recherche des informations fiables auprès de sources reconnues.</p>
+          </article>
+
+          <!-- Membre 3 -->
+          <article class="carte-membre">
+            <div class="photo-membre">
+              <span class="photo-initiale" aria-hidden="true">3</span>
+              <img src="images/membre3.jpg" alt="" width="300" height="300">
+            </div>
+            <h3>Obicoa Paule valérie</h3>
+            <p class="role">Rédaction</p>
+            <p>Écrit des textes clairs, simples et respectueux pour tous les publics.</p>
+          </article>
+
+          <!-- Membre 4 -->
+          <article class="carte-membre">
+            <div class="photo-membre">
+              <span class="photo-initiale" aria-hidden="true">4</span>
+              <img src="images/membre4.jpg" alt="" width="300" height="300">
+            </div>
+            <h3>Sika Marie pierre</h3>
+            <p class="role">Design</p>
+            <p>Choisit les couleurs, les images et l'ambiance douce du site.</p>
+          </article>
+
+          <!-- Membre 5 -->
+          <article class="carte-membre">
+            <div class="photo-membre">
+              <span class="photo-initiale" aria-hidden="true">5</span>
+              <img src="images/membre5.jpg" alt="" width="300" height="300">
+            </div>
+            <h3>Agbatsi Naomie</h3>
+            <p class="role">Intégration HTML/CSS</p>
+            <p>Transforme les idées du groupe en code HTML et CSS.</p>
+          </article>
+
+          <!-- Membre 6 -->
+          <article class="carte-membre">
+            <div class="photo-membre">
+              <span class="photo-initiale" aria-hidden="true">6</span>
+              <img src="images/membre6.jpg" alt="" width="300" height="300">
+            </div>
+            <h3>Coulibaly ella</h3>
+            <p class="role">Communication</p>
+            <p>Partage le projet et fait connaître notre message autour de nous.</p>
+          </article>
+
+          <!-- Membre 7 -->
+          <article class="carte-membre">
+            <div class="photo-membre">
+              <span class="photo-initiale" aria-hidden="true">7</span>
+              <img src="images/membre7.jpg" alt="" width="300" height="300">
+            </div>
+            <h3>Seca vianney</h3>
+            <p class="role">Relecture et qualité</p>
+            <p>Relit les contenus et vérifie que tout est clair et sans erreur.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION DE SENSIBILISATION ========== -->
+    <section class="sensibilisation" id="sensibilisation">
+      <div class="conteneur texte-centre">
+        <h2>La sensibilisation commence par l'information</h2>
+        <p class="texte-large">
+          Parler du cancer du sein, c'est déjà agir. Échangeons avec nos proches,
+          écoutons-nous avec bienveillance et cherchons des informations auprès de
+          sources fiables. En cas de question ou d'inquiétude, un professionnel de
+          santé est la bonne personne à consulter.
+        </p>
+        <!-- Lien vers une ressource institutionnelle (OMS). Vous pouvez le remplacer par une autre source officielle. -->
+        <a class="bouton bouton-clair" href="https://www.who.int/fr/news-room/fact-sheets/detail/breast-cancer" target="_blank" rel="noopener noreferrer">En savoir plus</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== PIED DE PAGE ========== -->
+  <footer class="pied-de-page">
+    <div class="conteneur texte-centre">
+      <p class="pied-nom"><span aria-hidden="true">🎗️</span> Les Rubans Roses</p>
+      <p>Projet réalisé par 7 apprenants</p>
+      <p>Ensemble, informons, soutenons et agissons.</p>
+      <p class="pied-annee">© 2026</p>
+    </div>
+  </footer>
 
 </body>
-    
-  </htlm>
+</html>
